@@ -5,44 +5,52 @@
 (function () {
   'use strict';
 
-  /* ── CURSOR ── */
+  /* ── CURSOR (desktop only) ── */
   const cur = document.getElementById('cur');
   const curdot = document.getElementById('curdot');
   let mx = 0, my = 0, cx = 0, cy = 0;
 
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    if (curdot) { curdot.style.left = mx + 'px'; curdot.style.top = my + 'px'; }
-  });
+  if (window.matchMedia('(hover: hover)').matches) {
+    document.addEventListener('mousemove', e => {
+      mx = e.clientX; my = e.clientY;
+      if (curdot) { curdot.style.left = mx + 'px'; curdot.style.top = my + 'px'; }
+    });
 
-  function lerp(a, b, t) { return a + (b - a) * t; }
-  (function animCursor() {
-    cx = lerp(cx, mx, 0.13);
-    cy = lerp(cy, my, 0.13);
-    if (cur) { cur.style.left = cx + 'px'; cur.style.top = cy + 'px'; }
-    requestAnimationFrame(animCursor);
-  })();
+    function lerp(a, b, t) { return a + (b - a) * t; }
+    (function animCursor() {
+      cx = lerp(cx, mx, 0.13);
+      cy = lerp(cy, my, 0.13);
+      if (cur) { cur.style.left = cx + 'px'; cur.style.top = cy + 'px'; }
+      requestAnimationFrame(animCursor);
+    })();
 
-  document.querySelectorAll('a,button,.proj-card,.blog-card,.soc-card,.badge,.filter-btn,.tool-card,.stack-badge').forEach(el => {
-    el.addEventListener('mouseenter', () => document.body.classList.add('cur-hover'));
-    el.addEventListener('mouseleave', () => document.body.classList.remove('cur-hover'));
-  });
+    document.querySelectorAll('a,button,.proj-card,.blog-card,.soc-card,.badge,.filter-btn,.tool-card,.stack-badge').forEach(el => {
+      el.addEventListener('mouseenter', () => document.body.classList.add('cur-hover'));
+      el.addEventListener('mouseleave', () => document.body.classList.remove('cur-hover'));
+    });
+  }
 
-  /* ── NAVBAR SCROLL ── */
+  /* ── NAVBAR SCROLL ──
+     PERBAIKAN: hanya toggle class 'scrolled', TIDAK menyentuh display/visibility navbar
+     sehingga burger tidak hilang saat scroll
+  ── */
   const nav = document.getElementById('nav');
   const navLinks = document.querySelectorAll('.nav-links a');
 
   window.addEventListener('scroll', () => {
-    if (nav) nav.classList.toggle('scrolled', window.scrollY > 50);
+    if (nav) {
+      // Hanya tambah/hapus class scrolled — tidak mengubah apapun lain
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    }
     updateActiveNav();
-  });
+  }, { passive: true });
 
   function updateActiveNav() {
     const sections = ['hero','tentang','tools','proyek','pengalaman','blog','kontak'];
     let current = '';
     sections.forEach(id => {
       const el = document.getElementById(id);
-      if (el && window.scrollY >= el.offsetTop - 100) current = id;
+      if (el && window.scrollY >= el.offsetTop - 120) current = id;
     });
     navLinks.forEach(a => {
       a.classList.toggle('active', a.getAttribute('href') === '#' + current);
@@ -52,16 +60,32 @@
   /* ── BURGER MENU ── */
   const burger = document.getElementById('burger');
   const mobileMenu = document.getElementById('mobileMenu');
+
   if (burger && mobileMenu) {
     burger.addEventListener('click', () => {
-      burger.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
+      const isOpen = burger.classList.toggle('open');
+      mobileMenu.classList.toggle('open', isOpen);
+      // Prevent body scroll saat menu terbuka
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
+
     mobileMenu.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
         burger.classList.remove('open');
         mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
       });
+    });
+
+    // Tutup menu saat klik di luar
+    document.addEventListener('click', (e) => {
+      if (mobileMenu.classList.contains('open') &&
+          !mobileMenu.contains(e.target) &&
+          !burger.contains(e.target)) {
+        burger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      }
     });
   }
 
@@ -76,7 +100,7 @@
       H = canvas.height = window.innerHeight;
     }
     resize();
-    window.addEventListener('resize', () => { resize(); initPts(); });
+    window.addEventListener('resize', () => { resize(); initPts(); }, { passive: true });
 
     function initPts() {
       pts = Array.from({ length: 90 }, () => ({
@@ -91,7 +115,7 @@
     initPts();
 
     let mouseXc = -9999, mouseYc = -9999;
-    document.addEventListener('mousemove', e => { mouseXc = e.clientX; mouseYc = e.clientY; });
+    document.addEventListener('mousemove', e => { mouseXc = e.clientX; mouseYc = e.clientY; }, { passive: true });
 
     function drawLoop() {
       ctx.clearRect(0, 0, W, H);
@@ -100,14 +124,12 @@
         if (p.x < 0 || p.x > W) p.vx *= -1;
         if (p.y < 0 || p.y > H) p.vy *= -1;
 
-        // Mouse attraction
         const dx = mouseXc - p.x, dy = mouseYc - p.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < 140) {
           p.vx += dx / dist * 0.012;
           p.vy += dy / dist * 0.012;
         }
-        // Cap speed
         const speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
         if (speed > 1.2) { p.vx /= speed; p.vy /= speed; }
 
@@ -117,7 +139,6 @@
         ctx.fill();
       });
 
-      // Lines
       for (let i = 0; i < pts.length; i++) {
         for (let j = i + 1; j < pts.length; j++) {
           const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
@@ -188,11 +209,9 @@
   const revEls = document.querySelectorAll('.reveal');
   const rObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('in');
-      }
+      if (e.isIntersecting) e.target.classList.add('in');
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   revEls.forEach(el => rObs.observe(el));
 
   /* ── TOOLS FILTER ── */
@@ -217,7 +236,9 @@
 
   /* ── COPY EMAIL ── */
   window.copyEmail = function () {
-    const email = 'emailkamu@gmail.com';
+    const email = document.getElementById('emailText')
+      ? document.getElementById('emailText').textContent.trim()
+      : 'mchlhutajulu@gmail.com';
     const toast = document.getElementById('copyToast');
     const btn = document.getElementById('emailBtn');
 
@@ -236,28 +257,36 @@
   function fallback(text, cb) {
     const ta = document.createElement('textarea');
     ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
-    document.body.appendChild(ta); ta.select(); document.execCommand('copy');
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch(e) {}
     document.body.removeChild(ta); cb();
   }
 
   /* ── SMOOTH SCROLL ── */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+      const href = a.getAttribute('href');
+      if (href === '#') return;
+      const target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
   });
 
-  /* ── TILT CARDS (subtle) ── */
-  document.querySelectorAll('.proj-card, .blog-card').forEach(card => {
-    card.addEventListener('mousemove', e => {
-      const r = card.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width - 0.5;
-      const y = (e.clientY - r.top) / r.height - 0.5;
-      card.style.transform = `translateY(-6px) rotateX(${-y * 4}deg) rotateY(${x * 4}deg)`;
+  /* ── TILT CARDS (subtle, desktop only) ── */
+  if (window.matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('.proj-card, .blog-card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = `translateY(-6px) rotateX(${-y * 4}deg) rotateY(${x * 4}deg)`;
+      });
+      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
     });
-    card.addEventListener('mouseleave', () => { card.style.transform = ''; });
-  });
+  }
 
   /* ── ACTIVE NAV ON LOAD ── */
   updateActiveNav();
