@@ -1,0 +1,22 @@
+Portofolio-Michael-Neo3D/
+├── index.html
+├── README-UBAH-DATA.txt
+├── FILE-LIST.txt
+├── css/
+│   ├── base.css
+│   └── sections.css
+├── js/
+│   └── main.js
+├── documents/
+│   └── Michael_Gokma_Tua_Hutajulu_CV_Academy.pdf
+└── images/
+    ├── Michael.jpg
+    ├── tingmo.png
+    ├── galonku.png
+    ├── bintang-serasi.png
+    ├── belajar-sma.png
+    ├── bem-it-del.png
+    ├── jadwal-kuliah.png
+    ├── kelas-trpl.png
+    ├── cert-ai.png
+    └── cert-python.png
