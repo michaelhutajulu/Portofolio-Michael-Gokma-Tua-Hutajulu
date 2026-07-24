@@ -1,792 +1,447 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Portfolio Profesional Software Engineer — Full Stack Developer berbasis Indonesia"/>
-  <title>Michael Hutajulu — Software Engineer</title>
-  <link rel="stylesheet" href="css/base.css"/>
-  <link rel="stylesheet" href="css/sections.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portofolio Michael Gokma Tua Hutajulu — Mobile Developer, Fullstack Developer, dan Software Engineering Student." />
+  <meta name="author" content="Michael Gokma Tua Hutajulu" />
+  <meta name="theme-color" content="#06111d" />
+  <meta property="og:title" content="Michael Gokma Tua Hutajulu — Portfolio" />
+  <meta property="og:description" content="Selected works in mobile development, web systems, backend API, and software engineering." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/Michael.jpg" />
+  <title>Michael Gokma Tua Hutajulu — Portfolio</title>
+  <link rel="icon" href="images/Michael.jpg" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/sections.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Lewati ke konten utama</a>
+  <div class="cursor-light" id="cursorLight" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
-<!-- ─────────────────────────────────────
-     CURSOR
-───────────────────────────────────────── -->
-<div id="cur"></div>
-<div id="curdot"></div>
-
-<!-- ─────────────────────────────────────
-     NAVBAR
-───────────────────────────────────────── -->
-<nav id="nav">
-  <div class="nav-logo">
-    <span class="nb">&lt;</span>MH<span class="na">/&gt;</span>
-  </div>
-  <ul class="nav-links">
-    <li><a href="#hero">Beranda</a></li>
-    <li><a href="#tentang">Tentang</a></li>
-    <li><a href="#tools">Teknologi</a></li>
-    <li><a href="#proyek">Proyek</a></li>
-    <li><a href="#pengalaman">Pengalaman</a></li>
-    <li><a href="#sertifikat">Sertifikat</a></li>
-    <li><a href="#kontak">Kontak</a></li>
-  </ul>
-  <a href="#kontak" class="nav-cta">Mari Terhubung →</a>
-  <button class="burger" id="burger" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<!-- Mobile Menu -->
-<div id="mobileMenu">
-  <a href="#hero">Beranda</a>
-  <a href="#tentang">Tentang</a>
-  <a href="#tools">Teknologi</a>
-  <a href="#proyek">Proyek</a>
-  <a href="#pengalaman">Pengalaman</a>
-  <li><a href="#sertifikat">Sertifikat</a></li>
-  <a href="#kontak">Kontak</a>
-</div>
-
-
-<!-- ═══════════════════════════════════════
-     SECTION 1 — HERO / BERANDA
-════════════════════════════════════════ -->
-<section id="hero">
-  <canvas id="heroCanvas"></canvas>
-  <div class="hero-grid"></div>
-
-  <!-- Orbs -->
-  <div class="orb orb-violet" style="width:500px;height:500px;top:-100px;left:-150px;opacity:0.7"></div>
-  <div class="orb orb-acid"   style="width:300px;height:300px;bottom:100px;right:0;opacity:0.8"></div>
-
-  <div class="container hero-inner">
-    <!-- Left: Text -->
-    <div class="hero-left">
-      <div class="hero-badge">
-        <span class="dot"></span>
-        Bersedia untuk pengerjaan proyek baru
-      </div>
-
-      <h1 class="hero-name">
-        <span class="ln1">Michael</span>
-        <span class="ln2">Hutajulu.</span>
-      </h1>
-
-      <div class="hero-typer-wrap">
-        &gt; <span id="typer"></span><span class="caret">_</span>
-      </div>
-
-      <p class="hero-desc">
-        Membangun pengalaman digital yang berada di persimpangan antara 
-        kode yang elegan dan desain yang profesional. Saya membangun sistem 
-        yang skalabel, antarmuka yang memikat, dan solusi yang bertahan lama.
-      </p>
-
-      <div class="hero-btns">
-        <a href="#proyek" class="btn-primary">Lihat Proyek Saya</a>
-        <a href="#kontak" class="btn-ghost">Hubungi Saya</a>
-      </div>
-
-      <div class="hero-stats">
-        <div class="hstat">
-          <div class="num"><span data-count="3">0</span><sup>+</sup></div>
-          <small>Tahun Pengalaman</small>
-        </div>
-        <div class="hstat-div"></div>
-        <div class="hstat">
-          <div class="num"><span data-count="20">0</span><sup>+</sup></div>
-          <small>Proyek Selesai</small>
-        </div>
-        <div class="hstat-div"></div>
-        <div class="hstat">
-          <div class="num"><span data-count="18">0</span><sup>+</sup></div>
-          <small>Tech Stack</small>
-        </div>
-      </div>
-    </div>
-
-    <!-- Right: Code Window -->
-    <div class="hero-right" style="position:relative">
-      <div class="code-window">
-        <div class="cw-bar">
-          <div class="cw-dots">
-            <span class="r"></span><span class="y"></span><span class="g"></span>
-          </div>
-          <span class="cw-name">tentang-saya.js</span>
-        </div>
-        <div class="cw-body">
-<pre><span class="cc">// 👋 Halo, Dunia!</span>
-<span class="ck">const</span> <span class="cv">engineer</span> = {
-  nama:      <span class="cs">"Michael Gokma Tua Hutajulu"</span>,
-  peran:     <span class="cs">"Full Stack Engineer"</span>,
-  lokasi:    <span class="cs">"Indonesia 🇮🇩"</span>,
-  stack: [
-    <span class="cs">"React"</span>, <span class="cs">"Node.js"</span>,
-    <span class="cs">"Python"</span>, <span class="cs">"PostgreSQL"</span>,
-    <span class="cs">"Flutter"</span>, <span class="cs">"Laravel"</span>,
-    <span class="cs">"Golang"</span>
-  ],
-
-};</pre>
-        </div>
-      </div>
-      <div class="float-tag ft1">🚀 Terbuka untuk peluang</div>
-      <div class="float-tag ft3">💻 Remote friendly</div>
-    </div>
+  <div class="background-scene" aria-hidden="true">
+    <span class="bg-orb bg-orb--one"></span>
+    <span class="bg-orb bg-orb--two"></span>
+    <span class="bg-orb bg-orb--three"></span>
+    <span class="bg-grid"></span>
   </div>
 
-  <div class="scroll-arrow">
-    <span>SCROLL</span>
-    <div class="sa-line"></div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════
-     SECTION 2 — TENTANG SAYA
-════════════════════════════════════════ -->
-<section id="tentang" class="section">
-  <div class="orb orb-pink" style="width:400px;height:400px;top:50%;right:-100px;opacity:0.6"></div>
-  <div class="container">
-    <div class="about-grid">
-
-      <!-- Foto -->
-      <div class="about-photo-wrap reveal">
-        <div class="about-photo">
-          <div class="photo-avatar">
-            <img src="images/Michael.jpg" alt="Foto Michael" class="avatar-img">
-              <circle cx="60" cy="44" r="26" fill="rgba(110,86,255,0.25)" stroke="rgba(110,86,255,0.6)" stroke-width="1.5"/>
-              <ellipse cx="60" cy="100" rx="40" ry="28" fill="rgba(110,86,255,0.12)" stroke="rgba(110,86,255,0.4)" stroke-width="1.5"/>
-              <circle cx="60" cy="44" r="18" fill="rgba(110,86,255,0.15)"/>
-            </svg>
-            <p>Foto Kamu di Sini</p>
-          </div>
-        </div>
-        <div class="about-deco"></div>
-        <div class="about-deco2"></div>
-      </div>
-
-      <!-- Teks -->
-      <div class="about-text">
-        <div class="section-label reveal">02 — Tentang Saya</div>
-        <h2 class="section-title reveal reveal-d1">
-          Engineer by craft, <em>creator</em><br>by nature
-        </h2>
-        <p class="reveal reveal-d2">
-          Saya adalah software engineer dengan semangat besar dalam membangun 
-          software yang responsif dan powerful. Dari merancang sistem backend hingga 
-          membuat antarmuka yang pixel-perfect, saya berkembang di seluruh stack.
-        </p>
-        <p class="reveal reveal-d3">
-          Filosofi saya sederhana: tulis kode dengan clean code, bangun sistem yang 
-          baik, dan ciptakan produk yang benar-benar membuat kehidupan manusia 
-          lebih baik. Software terbaik adalah yang secara teknis unggul sekaligus 
-          manusiawi.
-        </p>
-        <div class="about-badges reveal reveal-d4">
-          <span class="badge">Problem Solver</span>
-          <span class="badge">Team Player</span>
-          <span class="badge">Continuous Learner</span>
-          <span class="badge">Open Source</span>
-          <span class="badge">Clean Code Advocate</span>
-        </div>
-        <div class="reveal reveal-d5" style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap">
-          <a href="#proyek" class="btn-primary">Lihat Karya Saya</a>
-          <a href="#kontak" class="btn-ghost">Ajak Kolaborasi</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════
-     SECTION 3 — TOOLS & TEKNOLOGI
-════════════════════════════════════════ -->
-<section id="tools" class="section">
-  <div class="orb orb-violet" style="width:350px;height:350px;bottom:0;left:-80px;opacity:0.5"></div>
-  <div class="container">
-    <div class="section-label reveal">03 — Teknologi</div>
-    <h2 class="section-title reveal reveal-d1">
-      Tools yang Saya <em>Kuasai</em>
-    </h2>
-    <p class="tools-intro reveal reveal-d2">
-      Dari finesse frontend hingga orkestrasi infrastruktur — pandangan komprehensif 
-      tentang kemampuan teknis saya yang terus berkembang.
-    </p>
-
-    <!-- Filter -->
-    <div class="tools-filter reveal reveal-d3">
-      <button class="filter-btn active" data-cat="semua">Semua</button>
-      <button class="filter-btn" data-cat="frontend">Frontend</button>
-      <button class="filter-btn" data-cat="backend">Backend</button>
-      <button class="filter-btn" data-cat="devops">DevOps & Cloud</button>
-      <button class="filter-btn" data-cat="database">Database</button>
-      <button class="filter-btn" data-cat="tools">Tools</button>
-    </div>
-
-    <!-- Grid -->
-    <div class="tools-grid reveal reveal-d4">
-      <!-- Frontend -->
-      <div class="tool-card" data-cat="frontend"><div class="tool-icon">⚛️</div><div class="tool-info"><div class="tool-name">React / Next.js</div><div class="tool-cat">Frontend</div></div></div>
-      <div class="tool-card" data-cat="frontend"><div class="tool-icon">🎨</div><div class="tool-info"><div class="tool-name">Tailwind CSS</div><div class="tool-cat">Frontend</div></div></div>
-      <div class="tool-card" data-cat="frontend"><div class="tool-icon">🟨</div><div class="tool-info"><div class="tool-name">JavaScript ES2024</div><div class="tool-cat">Frontend</div></div></div>
-      <div class="tool-card" data-cat="frontend"><div class="tool-icon">📐</div><div class="tool-info"><div class="tool-name">HTML5 / CSS3</div><div class="tool-cat">Frontend</div></div></div>
-      <!-- Backend -->
-      <div class="tool-card" data-cat="backend"><div class="tool-icon">🟩</div><div class="tool-info"><div class="tool-name">Node.js</div><div class="tool-cat">Backend</div></div></div>
-      <div class="tool-card" data-cat="backend"><div class="tool-icon">🐍</div><div class="tool-info"><div class="tool-name">Python</div><div class="tool-cat">Backend</div></div></div>
-      <div class="tool-card" data-cat="backend"><div class="tool-icon">🔗</div><div class="tool-info"><div class="tool-name">REST API / GraphQL</div><div class="tool-cat">Backend</div></div></div>
-      <div class="tool-card" data-cat="backend"><div class="tool-icon">☕</div><div class="tool-info"><div class="tool-name">Java / Spring Boot</div><div class="tool-cat">Backend</div></div></div>
-      <!-- DevOps -->
-      <div class="tool-card" data-cat="devops"><div class="tool-icon">🐳</div><div class="tool-info"><div class="tool-name">Docker / Kubernetes</div><div class="tool-cat">DevOps</div></div></div>
-      <div class="tool-card" data-cat="devops"><div class="tool-icon">⚙️</div><div class="tool-info"><div class="tool-name">CI/CD GitHub Actions</div><div class="tool-cat">DevOps</div></div></div>
-      <div class="tool-card" data-cat="devops"><div class="tool-icon">☁️</div><div class="tool-info"><div class="tool-name">AWS / GCP</div><div class="tool-cat">DevOps</div></div></div>
-      <div class="tool-card" data-cat="devops"><div class="tool-icon">🐧</div><div class="tool-info"><div class="tool-name">Linux / Bash Scripting</div><div class="tool-cat">DevOps</div></div></div>
-      <!-- Database -->
-      <div class="tool-card" data-cat="database"><div class="tool-icon">🐘</div><div class="tool-info"><div class="tool-name">PostgreSQL</div><div class="tool-cat">Database</div></div></div>
-      <div class="tool-card" data-cat="database"><div class="tool-icon">🍃</div><div class="tool-info"><div class="tool-name">MongoDB</div><div class="tool-cat">Database</div></div></div>
-      <div class="tool-card" data-cat="database"><div class="tool-icon">🐬</div><div class="tool-info"><div class="tool-name">MySQL</div><div class="tool-cat">Database</div></div></div>
-      <!-- Tools -->
-      <div class="tool-card" data-cat="tools"><div class="tool-icon">🐙</div><div class="tool-info"><div class="tool-name">Git / GitHub</div><div class="tool-cat">Tools</div></div></div>
-      <div class="tool-card" data-cat="tools"><div class="tool-icon">⚡</div><div class="tool-info"><div class="tool-name">VS Code / Neovim</div><div class="tool-cat">Tools</div></div></div>
-      <div class="tool-card" data-cat="tools"><div class="tool-icon">🛠️</div><div class="tool-info"><div class="tool-name">Postman / Insomnia</div><div class="tool-cat">Tools</div></div></div>
-      <div class="tool-card" data-cat="tools"><div class="tool-icon">🎨</div><div class="tool-info"><div class="tool-name">Figma</div><div class="tool-cat">Tools</div></div></div>
-    </div>
-
-    <!-- Additional Stack -->
-    <div class="reveal reveal-d5" style="margin-top:2.5rem">
-      <p style="font-family:var(--mono);font-size:0.7rem;color:var(--dim);text-transform:uppercase;letter-spacing:0.14em;margin-bottom:1rem">Juga familiar dengan</p>
-      <div class="stack-row">
-        <span class="stack-badge">Flutter</span><span class="stack-badge">Firebase</span>
-        <span class="stack-badge">Golang</span><span class="stack-badge">Nginx</span>
-        <span class="stack-badge">Elasticsearch</span><span class="stack-badge">RabbitMQ</span>
-        <span class="stack-badge">Vercel</span><span class="stack-badge">Supabase</span>
-        <span class="stack-badge">System Design</span><span class="stack-badge">TDD/BDD</span>
-        <span class="stack-badge">Microservices</span><span class="stack-badge">WebSockets</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════
-     SECTION 4 — PROYEK
-════════════════════════════════════════ -->
-<section id="proyek" class="section">
-  <div class="orb orb-acid" style="width:400px;height:400px;top:0;right:100px;opacity:0.6"></div>
-  <div class="container">
-    <div class="projects-header">
-      <div>
-        <div class="section-label reveal">04 — Proyek</div>
-        <h2 class="section-title reveal reveal-d1">Karya <em>Terpilih</em></h2>
-      </div>
-      <a href="https://github.com/michaelhutajulu" target="_blank" rel="noopener" class="gh-link reveal reveal-d2">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-        Semua Repository
-      </a>
-    </div>
-
-    <div class="projects-grid">
-
-      <!-- Proyek 1 -->
-      <a href="https://github.com/michaelhutajulu/PA1" target="_blank" rel="noopener" class="proj-card reveal">
-        <span class="proj-num">01</span>
-        <div class="proj-thumb">
-          <div class="proj-mock" 
-              style="background-image:url('images/Bintang.png'); 
-                      background-size:cover; 
-                      background-position:center;">
-          </div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-tags">
-            <span class="proj-tag">Laravel</span>
-            <span class="proj-tag">XAMPP</span>
-            <span class="proj-tag">MySQL</span>
-          </div>
-          <h3>Proyek Pertama — Toko Bintang Serasi</h3>
-          <p>Toko Bintang serasi tempat anda mencari dan membeli barang-barang elektronik dan perabotan rumah tangga.</p>
-          <div class="proj-links">
-            <span class="proj-link">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-              Kode Sumber
-            </span>
-            <span class="proj-link" style="margin-left:auto;color:var(--acid)">
-              Kunjungi GitHub →
-            </span>
-          </div>
-        </div>
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar container" aria-label="Navigasi utama">
+      <a class="brand" href="#hero" aria-label="Kembali ke beranda">
+        <span class="brand-mark">MH</span>
+        <span class="brand-name">Michael Hutajulu</span>
       </a>
 
-      <!-- Proyek 2 -->
-      <a href="https://github.com/Divisi-Digital-Developmen-IT-DEL/Website-BEM-IT-DEL" target="_blank" rel="noopener" class="proj-card reveal reveal-d1">
-        <span class="proj-num">02</span>
-        <div class="proj-thumb">
-          <div class="proj-mock" style="background-image:url('images/BEM.png'); background-size:cover; background-position:center;">
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Buka menu navigasi" aria-controls="navMenu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-menu" id="navMenu">
+        <a href="#tentang" class="nav-link">Tentang</a>
+        <a href="#skills" class="nav-link">Skill</a>
+        <a href="#proyek" class="nav-link">Proyek</a>
+        <a href="#pengalaman" class="nav-link">Pengalaman</a>
+        <a href="#sertifikat" class="nav-link">Sertifikat</a>
+        <a href="#kontak" class="nav-link nav-link--accent">Kontak</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero section-full" id="hero">
+      <div class="container hero-layout">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> Portfolio • Mobile • Web • Backend</p>
+          <h1>Michael Gokma<br><span>Tua Hutajulu</span></h1>
+          <p class="hero-role"><span id="typewriter">Mobile Developer</span><span class="typing-caret">|</span></p>
+          <p class="hero-description">
+            Mahasiswa D-IV Teknologi Rekayasa Perangkat Lunak yang berfokus pada pengembangan aplikasi mobile, sistem web, backend API, dan produk digital yang menyelesaikan kebutuhan nyata. Saya terbiasa menyusun alur fitur, menghubungkan frontend dengan backend, membuat dokumentasi, dan menjelaskan solusi secara sederhana.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#proyek" class="btn btn-primary magnetic">Lihat Project</a>
+            <a href="documents/Michael_Gokma_Tua_Hutajulu_CV_Academy.pdf" class="btn btn-secondary magnetic" target="_blank" rel="noopener">Buka CV</a>
+          </div>
+
+          <div class="hero-metrics" aria-label="Ringkasan profil">
+            <article class="metric-card depth-card reveal-stagger" data-tilt>
+              <strong data-count="7">0</strong>
+              <span>Project & technical works</span>
+            </article>
+            <article class="metric-card depth-card reveal-stagger" data-tilt>
+              <strong data-count="30">0</strong>
+              <span>Siswa pernah dibimbing</span>
+            </article>
+            <article class="metric-card depth-card reveal-stagger" data-tilt>
+              <strong>2028</strong>
+              <span>Expected graduation</span>
+            </article>
           </div>
         </div>
-        <div class="proj-body">
-          <div class="proj-tags">
-            <span class="proj-tag">React</span>
-            <span class="proj-tag">PostgreSQL</span>
-            <span class="proj-tag">Docker</span>
+
+        <aside class="hero-stage reveal reveal-delay-1" aria-label="Visual profil 3D">
+          <div class="stage-shell" data-parallax-card>
+            <div class="orbit orbit--outer" aria-hidden="true"></div>
+            <div class="orbit orbit--inner" aria-hidden="true"></div>
+            <div class="floating-chip floating-chip--top" aria-hidden="true">
+              <strong>Flutter</strong>
+              <span>Mobile UI</span>
+            </div>
+            <div class="floating-chip floating-chip--right" aria-hidden="true">
+              <strong>Golang</strong>
+              <span>REST API</span>
+            </div>
+
+            <article class="profile-panel depth-card" data-tilt data-tilt-strong="true">
+              <div class="profile-glass-layer" aria-hidden="true"></div>
+              <div class="profile-photo-wrap">
+                <img src="images/Michael.jpg" alt="Foto Michael Gokma Tua Hutajulu" />
+              </div>
+              <div class="profile-info">
+                <p class="availability"><span></span> Available for internship</p>
+                <h2>Mobile Developer<br>Fullstack Developer</h2>
+                <p>Software Engineering Student at Institut Teknologi Del.</p>
+              </div>
+            </article>
           </div>
-          <h3>Proyek Besar Kampus — High-Performance API</h3>
-          <p>Layanan REST API berkinerja tinggi yang menangani ribuan request concurrent dengan intelligent caching dan pemrosesan data real-time.</p>
-          <div class="proj-links">
-            <span class="proj-link">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-              Kode Sumber
-            </span>
-            <span class="proj-link" style="margin-left:auto;color:var(--acid)">
-              Kunjungi GitHub →
-            </span>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="tentang">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-kicker">01 — Tentang Saya</p>
+            <h2 class="section-title">Membangun sistem dari kebutuhan nyata, bukan hanya dari tampilan.</h2>
           </div>
+          <p class="section-lead">Saya belajar melalui project, dokumentasi, pengujian, dan kerja tim. Fokus saya adalah membuat produk digital yang alurnya jelas, rapi, dan mudah digunakan.</p>
         </div>
-      </a>
 
-      <!-- Proyek 3 -->
-      <a href="https://michaelhutajulu.github.io/Jadwal-Kuliah/" target="_blank" rel="noopener" class="proj-card reveal reveal-d2">
-        <span class="proj-num">03</span>
-        <div class="proj-thumb">
-          <div class="proj-mock" style="background-image:url('images/jadwal.png'); background-size:cover; background-position:center;">
+        <div class="about-layout">
+          <article class="about-card depth-card reveal" data-tilt>
+            <p>
+              Saya tertarik pada pengembangan aplikasi mobile dan sistem informasi yang membantu pekerjaan sehari-hari menjadi lebih mudah. Dalam beberapa project, saya terbiasa mengerjakan alur autentikasi, pengajuan layanan, pengaduan, peminjaman fasilitas, dashboard admin, integrasi API, database, dan notifikasi.
+            </p>
+            <p>
+              Selain teknis, saya juga belajar mengelola komunikasi tim, menyusun dokumentasi, mempresentasikan progress, dan menjelaskan hal teknis dengan bahasa sederhana. Pengalaman mengajar informatika untuk siswa pemula membantu saya lebih sabar dan lebih jelas dalam menyampaikan ide.
+            </p>
+            <div class="pill-group">
+              <span>Builder Mindset</span><span>Product Thinking</span><span>Team Collaboration</span><span>Clear Communication</span>
+            </div>
+          </article>
+
+          <div class="about-mini-grid">
+            <article class="mini-card depth-card reveal reveal-delay-1" data-tilt>
+              <p class="mini-label">Education</p>
+              <h3>Institut Teknologi Del</h3>
+              <p>D-IV Teknologi Rekayasa Perangkat Lunak.</p>
+            </article>
+            <article class="mini-card depth-card reveal reveal-delay-2" data-tilt>
+              <p class="mini-label">Current Focus</p>
+              <h3>Mobile & Backend</h3>
+              <p>Mobile app, backend API, database-backed workflow, testing, dan product flow.</p>
+            </article>
+            <article class="mini-card depth-card reveal reveal-delay-3" data-tilt>
+              <p class="mini-label">Work Style</p>
+              <h3>Reliable Builder</h3>
+              <p>Terstruktur, terbuka terhadap feedback, dan fokus pada solusi yang realistis.</p>
+            </article>
           </div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-tags">
-            <span class="proj-tag">HTML5</span>
-            <span class="proj-tag">JavaScript</span>
-            <span class="proj-tag">CSS</span>
-          </div>
-          <h3>Proyek Gabut — Penjadwalan Kuliah</h3>
-          <p>Web yang saya buat untuk mempermudah saya melihat jadwal kuliah saya, dan saya akan kembangkan menjadi sebuah aplikasi gratis di playstore dan mengembangkan beberapa fitur lainnya.</p>
-          <div class="proj-links">
-            <span class="proj-link">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-              Kode Sumber
-            </span>
-            <span class="proj-link" style="margin-left:auto;color:var(--acid)">
-              Kunjungi GitHub →
-            </span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Proyek 4 -->
-      <a href="https://michaelhutajulu.github.io/D4TRPL/" target="_blank" rel="noopener" class="proj-card reveal reveal-d3">
-        <span class="proj-num">04</span>
-        <div class="proj-thumb">
-          <div class="proj-mock" style="background-image:url('images/kelas.png'); background-size:cover; background-position:center;">
-          </div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-tags">
-            <span class="proj-tag">TypeScript</span>
-            <span class="proj-tag">Next.js</span>
-            <span class="proj-tag">MongoDB</span>
-          </div>
-          <h3>Proyek Gabut2 — Profil Kelas</h3>
-          <p>Website profil kelas D4 TRPL 24 yang saya bangun sendiri untuk memperkenalkan kelas dan teman - teman saya kepada publik dengan lebih gampang.</p>
-          <div class="proj-links">
-            <span class="proj-link">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-              Kode Sumber
-            </span>
-            <span class="proj-link" style="margin-left:auto;color:var(--acid)">
-              Kunjungi GitHub →
-            </span>
-          </div>
-        </div>
-      </a>
-
-    </div>
-
-    <div class="projects-cta reveal reveal-d4">
-      <a href="https://github.com/michaelhutajulu" target="_blank" rel="noopener" class="btn-primary">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-        Jelajahi Semua Repository
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════════════════════════════════
-     SECTION 5 — PENGALAMAN
-════════════════════════════════════════ -->
-<section id="pengalaman" class="section">
-  <div class="orb orb-violet" style="width:300px;height:300px;top:20%;left:-50px;opacity:0.4"></div>
-  <div class="container">
-    <div class="section-label reveal">05 — Pengalaman</div>
-    <h2 class="section-title reveal reveal-d1">
-      Perjalanan <em>Michael</em>
-    </h2>
-    <p style="max-width:540px;margin-bottom:4rem" class="reveal reveal-d2">
-      Setiap langkah dalam hidup saya telah membentuk bagaimana saya berpikir, 
-      membangun, dan berkolaborasi sebagai seorang engineer.
-    </p>
-
-    <div class="timeline">
-
-      <div class="tl-item right reveal">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-year">2024 — Sekarang</div>
-          <h3>Software Engineer</h3>
-          <span class="tl-company">🎓 Institut Teknologi Del, Indonesia</span>
-          <p>Setelah lulus dari SMA saya masuk perkuliahan di IT DEL dan mulai memmulai proyek - proyek besar dan memperlajari lebih banyak lagi mengenai IT dan memahami kebutuhan industri serta menerapkan nya di dalam kehidupan.</p>
-          <div class="tl-tags"><span class="tl-tag">React</span><span class="tl-tag">Flutter</span><span class="tl-tag">Laravel</span><span class="tl-tag">Docker</span><span class="tl-tag">Golang</span></div>
         </div>
       </div>
+    </section>
 
-      <div class="tl-item left reveal reveal-d1">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-year">2023 — 2024</div>
-          <h3>Pengajar</h3>
-          <span class="tl-company">🏢 Pengajar Ekstrakulikuler Informatika SMA</span>
-          <p>Dengan prestasi saya yang berhasil menang OSN, saya di tunjuk oleh kepala sekolah untuk menjadi pengajar kepada adek kelas saya untuk OSN tahun selanjutnya yang akan mereka ikuti, saya pun mengajari mereka dari dasar dimulai dari html, css, js dan saya mengajarkan bahasa c karna itu adalah bahasa yang di pakai dalam olimpiade tersebut dan mengajarkan mereka cara mulisan program dengan baik dan benar.</p>
-          <div class="tl-tags"><span class="tl-tag">C</span><span class="tl-tag">HTML5</span><span class="tl-tag">JavaScript</span><span class="tl-tag">Redis</span></div>
+    <section class="section section-soft" id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-kicker">02 — Skills & Tools</p>
+            <h2 class="section-title">Stack yang saya gunakan untuk membangun sistem.</h2>
+          </div>
+          <p class="section-lead">Skill ditampilkan berdasarkan project yang pernah dikerjakan agar tetap relevan dan mudah dipertanggungjawabkan.</p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card depth-card reveal" data-tilt>
+            <p class="skill-label">Mobile</p>
+            <h3>Flutter Development</h3>
+            <p>Flutter, Dart, mobile UI, form flow, routing, state management, dan integrasi API.</p>
+          </article>
+          <article class="skill-card depth-card reveal reveal-delay-1" data-tilt>
+            <p class="skill-label">Backend</p>
+            <h3>REST API</h3>
+            <p>Golang/Gin, REST API, JWT authentication, service flow, dan struktur endpoint.</p>
+          </article>
+          <article class="skill-card depth-card reveal reveal-delay-2" data-tilt>
+            <p class="skill-label">Web</p>
+            <h3>Web System</h3>
+            <p>Laravel, PHP, React, HTML, CSS, JavaScript, dashboard admin, dan web publik.</p>
+          </article>
+          <article class="skill-card depth-card reveal" data-tilt>
+            <p class="skill-label">Database</p>
+            <h3>Data Flow</h3>
+            <p>PostgreSQL, MySQL, GORM, relational data flow, dan penyusunan kebutuhan data.</p>
+          </article>
+          <article class="skill-card depth-card reveal reveal-delay-1" data-tilt>
+            <p class="skill-label">Quality</p>
+            <h3>Testing & Docs</h3>
+            <p>Blackbox testing, dokumentasi, presentasi, laporan project, dan evaluasi fitur.</p>
+          </article>
+          <article class="skill-card depth-card reveal reveal-delay-2" data-tilt>
+            <p class="skill-label">Workflow</p>
+            <h3>Tools</h3>
+            <p>Git, GitHub, Postman, Figma, Firebase FCM, VS Code, dan workflow kolaborasi.</p>
+          </article>
         </div>
       </div>
+    </section>
 
-      <div class="tl-item right reveal reveal-d2">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-year">2022 — 2023</div>
-          <h3>Menang OSN-K</h3>
-          <span class="tl-company">🏆 Olimpiade Sain Nasional</span>
-          <p>Disini lah semangat saya membara karena di tunjuk oleh guru untuk mengikuti lomba OSN, dengan belajar mandiri dengan bantuan buku - buku yang diberikan guru saya kepada saya dan akhirnya menang OSNK dan lanjut lomba lagi untuk tingkat provinsi di medan, walau pada akhirnya hanya sampai OSNK saya tidak berkecil hati karna pengalaman yang sudah saya dapat dan rasakan.</p>
-          <div class="tl-tags"><span class="tl-tag">C</span><span class="tl-tag">C++</span><span class="tl-tag">Pascal</span></div>
+    <section class="section" id="proyek">
+      <div class="container">
+        <div class="project-top reveal">
+          <div class="project-title-block">
+            <p class="section-kicker">03 — Selected Projects</p>
+            <h2 class="section-title">Project yang paling mewakili kemampuan saya.</h2>
+            <p class="section-lead">Gunakan filter untuk melihat project berdasarkan kategori. Setiap card dibuat berdasarkan alur dan teknologi yang pernah saya kerjakan.</p>
+          </div>
+          <aside class="project-summary depth-card" data-tilt>
+            <span class="summary-label">Repository</span>
+            <p>Kumpulan project mobile, web, backend, dan team project.</p>
+            <a href="https://github.com/michaelhutajulu" target="_blank" rel="noopener" class="summary-link magnetic">Lihat GitHub <span>→</span></a>
+          </aside>
+        </div>
+
+        <div class="project-toolbar reveal reveal-delay-1" aria-label="Filter project">
+          <div class="filter-group" role="group" aria-label="Pilih kategori project">
+            <button type="button" class="filter-btn active" data-filter="all">Semua</button>
+            <button type="button" class="filter-btn" data-filter="mobile">Mobile</button>
+            <button type="button" class="filter-btn" data-filter="web">Web</button>
+            <button type="button" class="filter-btn" data-filter="backend">Backend</button>
+            <button type="button" class="filter-btn" data-filter="team">Team</button>
+          </div>
+          <p class="project-counter" id="projectCounter">Menampilkan semua project</p>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid">
+          <article class="project-card project-card--featured depth-card reveal" data-project-card data-project-categories="mobile backend team" data-tilt>
+            <div class="project-visual project-visual--phone project-visual--green" data-preview="images/tingmo.png" data-preview-title="TingMo — Mobile-Based Village Administration System">
+              <span class="project-badge">Featured</span>
+              <div class="phone-frame">
+                <img src="images/tingmo.png" alt="Tampilan aplikasi TingMo" />
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="tech-list"><span>Flutter</span><span>Golang/Gin</span><span>PostgreSQL</span><span>Laravel</span><span>FCM</span></div>
+              <h3>TingMo — Mobile-Based Village Administration System</h3>
+              <p>Sistem informasi dan layanan administrasi desa untuk Desa Tinggir Ni Pasir. Project ini mencakup aplikasi mobile warga, backend API, web admin, pengajuan surat, pengaduan, peminjaman fasilitas, pengumuman, notifikasi, dan tracking status.</p>
+              <ul>
+                <li>Berperan sebagai Project Manager & Developer.</li>
+                <li>Menghubungkan alur mobile, backend, database, dan panel admin.</li>
+                <li>Fokus pada service flow yang mudah dipahami warga dan admin.</li>
+              </ul>
+              <div class="project-actions"><span class="project-link disabled">Repository belum publik</span></div>
+            </div>
+          </article>
+
+          <article class="project-card project-card--featured project-card--reverse depth-card reveal" data-project-card data-project-categories="mobile backend" data-tilt>
+            <div class="project-visual project-visual--phone project-visual--aqua" data-preview="images/galonku.png" data-preview-title="GalonKu — Marketplace Galon Terdekat">
+              <span class="project-badge">Mobile Flow</span>
+              <div class="phone-frame phone-frame--light">
+                <img src="images/galonku.png" alt="Splash screen aplikasi GalonKu" />
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="tech-list"><span>Flutter</span><span>Go Fiber</span><span>PostgreSQL</span><span>Midtrans</span><span>Realtime Flow</span></div>
+              <h3>GalonKu — Marketplace Galon Terdekat</h3>
+              <p>Konsep aplikasi layanan pemesanan galon dengan alur customer, pemilik toko, kurir, pembayaran, dan tracking. Project ini dipakai untuk memperkuat pemahaman service request flow dan sistem mobile-backed.</p>
+              <ul>
+                <li>Menyusun role customer, owner, kurir, dan super admin.</li>
+                <li>Mendesain alur order, produk, lokasi toko, pembayaran, dan pengantaran.</li>
+                <li>Melatih pemodelan fitur marketplace berbasis layanan.</li>
+              </ul>
+              <div class="project-actions"><span class="project-link disabled">Repository belum publik</span></div>
+            </div>
+          </article>
+
+          <article class="project-card depth-card reveal" data-project-card data-project-categories="web team" data-tilt>
+            <div class="project-thumb" data-preview="images/bintang-serasi.png" data-preview-title="UMKM Bintang Serasi Information System"><img src="images/bintang-serasi.png" alt="Website UMKM Bintang Serasi" /></div>
+            <div class="project-content">
+              <div class="tech-list"><span>Laravel</span><span>MySQL</span><span>Web Admin</span></div>
+              <h3>UMKM Bintang Serasi Information System</h3>
+              <p>Sistem informasi berbasis web untuk UMKM lokal, dengan fokus pada struktur informasi, alur fitur, dan kebutuhan pengguna.</p>
+              <div class="project-actions"><a class="project-link" href="https://github.com/michaelhutajulu" target="_blank" rel="noopener">GitHub</a></div>
+            </div>
+          </article>
+
+          <article class="project-card depth-card reveal reveal-delay-1" data-project-card data-project-categories="web team" data-tilt>
+            <div class="project-thumb project-thumb--contain" data-preview="images/belajar-sma.png" data-preview-title="Belajar SMA Website"><img src="images/belajar-sma.png" alt="Website pembelajaran SMA" /></div>
+            <div class="project-content">
+              <div class="tech-list"><span>React</span><span>MySQL</span><span>Education Web</span></div>
+              <h3>Belajar SMA Website</h3>
+              <p>Website pembelajaran untuk siswa SMA dengan kontribusi pada halaman Kimia kelas 12, struktur materi, dan penyajian konten belajar yang lebih jelas.</p>
+              <div class="project-actions"><a class="project-link" href="https://github.com/michaelhutajulu" target="_blank" rel="noopener">GitHub</a></div>
+            </div>
+          </article>
+
+          <article class="project-card depth-card reveal" data-project-card data-project-categories="web team" data-tilt>
+            <div class="project-thumb" data-preview="images/bem-it-del.png" data-preview-title="Website BEM IT Del"><img src="images/bem-it-del.png" alt="Website BEM IT Del" /></div>
+            <div class="project-content">
+              <div class="tech-list"><span>Web</span><span>Team</span><span>Digital Content</span></div>
+              <h3>Website BEM IT Del</h3>
+              <p>Kontribusi pada kebutuhan digital organisasi melalui dukungan konten, struktur web, dan pengembangan tampilan yang mudah diakses.</p>
+              <div class="project-actions"><a class="project-link" href="https://github.com/michaelhutajulu" target="_blank" rel="noopener">GitHub</a></div>
+            </div>
+          </article>
+
+          <article class="project-card depth-card reveal reveal-delay-1" data-project-card data-project-categories="web" data-tilt>
+            <div class="project-thumb" data-preview="images/jadwal-kuliah.png" data-preview-title="Jadwal Kuliah & Weather API"><img src="images/jadwal-kuliah.png" alt="Website jadwal kuliah dan weather API" /></div>
+            <div class="project-content">
+              <div class="tech-list"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>API</span></div>
+              <h3>Jadwal Kuliah & Weather API</h3>
+              <p>Website sederhana untuk menampilkan jadwal dan data cuaca menggunakan integrasi API, sekaligus latihan struktur halaman dan JavaScript.</p>
+              <div class="project-actions"><a class="project-link" href="https://github.com/michaelhutajulu" target="_blank" rel="noopener">GitHub</a></div>
+            </div>
+          </article>
+
+          <article class="project-card depth-card reveal reveal-delay-2" data-project-card data-project-categories="web" data-tilt>
+            <div class="project-thumb" data-preview="images/kelas-trpl.png" data-preview-title="Website Kelas D4 TRPL 24"><img src="images/kelas-trpl.png" alt="Website kelas D4 TRPL 24" /></div>
+            <div class="project-content">
+              <div class="tech-list"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+              <h3>Website Kelas D4 TRPL 24</h3>
+              <p>Website profil kelas untuk memperkenalkan kelas dan teman-teman satu program studi dengan tampilan yang mudah diakses publik.</p>
+              <div class="project-actions"><a class="project-link" href="https://github.com/michaelhutajulu" target="_blank" rel="noopener">GitHub</a></div>
+            </div>
+          </article>
         </div>
       </div>
+    </section>
 
-      <div class="tl-item left reveal reveal-d3">
-        <div class="tl-dot"></div>
-        <div class="tl-card">
-          <div class="tl-year">2021 — 2022</div>
-          <h3>SMA</h3>
-          <span class="tl-company">SMAN1 LAGUBOTI</span>
-          <p>Pada tahun - tahun ini lah saya memulai terjun dalam dunia programming, disini saya memulai dengan belajar bahasa python dan memahami bagaimana cara program sebenarnya bekerja.</p>
-          <div class="tl-tags"><span class="tl-tag">Akademik</span><span class="tl-tag">Algoritma</span><span class="tl-tag">Riset</span></div>
+    <section class="section section-soft" id="pengalaman">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-kicker">04 — Experience</p>
+            <h2 class="section-title">Pengalaman yang membentuk cara saya bekerja.</h2>
+          </div>
+          <p class="section-lead">Selain project teknis, saya juga aktif mengajar, berorganisasi, dan memimpin kegiatan. Ini membantu saya memahami komunikasi, tanggung jawab, dan kerja tim.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <span class="timeline-dot"></span>
+            <div class="timeline-card depth-card" data-tilt>
+              <p class="timeline-meta">Teacher / Mentor • 30+ students</p>
+              <h3>Informatics Extracurricular Teacher</h3>
+              <p>Mengajar konsep dasar informatika dan membantu siswa pemula memahami alur berpikir komputasional, logika, serta cara menyelesaikan masalah secara bertahap.</p>
+            </div>
+          </article>
+          <article class="timeline-item reveal reveal-delay-1">
+            <span class="timeline-dot"></span>
+            <div class="timeline-card depth-card" data-tilt>
+              <p class="timeline-meta">Organization Experience • Contributor</p>
+              <h3>BEM IT Del — Department of IPTEK / Digital Development</h3>
+              <p>Berkontribusi pada aktivitas digital development dan pekerjaan berbasis tim dalam organisasi, termasuk diskusi progress, tanggung jawab, dan dukungan konten digital.</p>
+            </div>
+          </article>
+          <article class="timeline-item reveal reveal-delay-2">
+            <span class="timeline-dot"></span>
+            <div class="timeline-card depth-card" data-tilt>
+              <p class="timeline-meta">Leadership / Communication</p>
+              <h3>PKM Socialization Coordinator</h3>
+              <p>Membantu koordinasi kegiatan sosialisasi, mengatur informasi, melakukan follow-up, dan berkomunikasi dengan berbagai pihak agar kegiatan berjalan lebih terarah.</p>
+            </div>
+          </article>
         </div>
       </div>
+    </section>
 
-    </div>
-  </div>
-</section>
+    <section class="section" id="sertifikat">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="section-kicker">05 — Certificate</p>
+            <h2 class="section-title">Sertifikat dan pembelajaran yang sudah saya selesaikan.</h2>
+          </div>
+          <p class="section-lead">Gambar sertifikat dibuat dengan mode aman agar tidak terpotong. Bagian ini bisa terus ditambahkan ketika sertifikat baru tersedia.</p>
+        </div>
 
-<!-- ═══════════════════════════════════════════════════════
-     SECTION SERTIFIKAT
-     Taruh di index.html SETELAH section #pengalaman
-     dan SEBELUM section #kontak
+        <div class="cert-grid">
+          <article class="cert-card depth-card reveal" data-tilt>
+            <div class="cert-image" data-preview="images/cert-ai.png" data-preview-title="Sertifikat Belajar Dasar AI"><img src="images/cert-ai.png" alt="Sertifikat Dasar AI" /></div>
+            <div class="cert-body">
+              <p class="cert-meta">Dicoding</p>
+              <h3>Belajar Dasar AI</h3>
+              <p>Pembelajaran dasar mengenai konsep kecerdasan buatan dan penerapannya.</p>
+              <span class="project-link disabled">Credential belum disetel</span>
+            </div>
+          </article>
+          <article class="cert-card depth-card reveal reveal-delay-1" data-tilt>
+            <div class="cert-image" data-preview="images/cert-python.png" data-preview-title="Sertifikat Memulai Pemrograman dengan Python"><img src="images/cert-python.png" alt="Sertifikat Python" /></div>
+            <div class="cert-body">
+              <p class="cert-meta">Dicoding</p>
+              <h3>Memulai Pemrograman dengan Python</h3>
+              <p>Pembelajaran dasar Python untuk memahami logika pemrograman dan penulisan kode.</p>
+              <span class="project-link disabled">Credential belum disetel</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-     PENTING: Simpan 2 gambar sertifikat ke folder img/ dengan nama:
-     - img/cert-ai.png        (screenshot sertifikat Belajar Dasar AI)
-     - img/cert-python.png    (screenshot sertifikat Memulai Pemrograman dengan Python)
-════════════════════════════════════════════════════════ -->
+    <section class="section contact-section" id="kontak">
+      <div class="container">
+        <div class="contact-shell depth-card reveal" data-tilt>
+          <div class="contact-copy">
+            <p class="section-kicker">06 — Contact</p>
+            <h2 class="section-title">Mari terhubung dan bangun sesuatu yang bermanfaat.</h2>
+            <p class="section-lead">Terbuka untuk diskusi magang, kolaborasi project, pengembangan aplikasi mobile/web, atau bertukar cerita tentang software engineering dan product building.</p>
+            <button type="button" class="email-card" id="copyEmail" data-email="mchlhutajulu@gmail.com">
+              <strong>mchlhutajulu@gmail.com</strong>
+              <span>Klik untuk salin email</span>
+            </button>
+          </div>
 
-<section id="sertifikat" class="section">
-  <div class="orb orb-acid" style="width:400px;height:400px;top:5%;right:-100px;opacity:0.35;pointer-events:none;z-index:0;"></div>
-  <div class="orb orb-violet" style="width:300px;height:300px;bottom:10%;left:-80px;opacity:0.25;pointer-events:none;z-index:0;"></div>
-
-  <div class="container" style="position:relative;z-index:1;">
-
-    <div class="section-label reveal">06 — Sertifikat</div>
-    <h2 class="section-title reveal reveal-d1">
-      Sertifikasi &amp; <em>Kompetensi</em>
-    </h2>
-    <p class="reveal reveal-d2" style="max-width:520px;margin-bottom:3.5rem;">
-      Bukti nyata komitmen saya dalam terus belajar dan meningkatkan keahlian
-      melalui sertifikasi resmi dari Dicoding Indonesia.
-    </p>
-
-    <div class="cert-grid">
-
-      <!-- ── SERTIFIKAT 1: Belajar Dasar AI ── -->
-      <div class="cert-card reveal">
-        <div class="cert-preview">
-          <img
-            src="images/AI.png"
-            alt="Sertifikat Belajar Dasar AI - Michael Gokma Tua Hutajulu"
-            class="cert-img"
-            loading="lazy"
-          />
-          <div class="cert-preview-overlay">
-            <a
-              href="https://www.dicoding.com/certificates/QLZ99K9L7Z5D"
-              target="_blank" rel="noopener"
-              class="cert-view-btn"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
-                <polyline points="15 3 21 3 21 9"/>
-                <line x1="10" y1="14" x2="21" y2="3"/>
-              </svg>
-              Buka Sertifikat
+          <div class="contact-grid">
+            <a class="contact-card" href="https://wa.me/62895360705332" target="_blank" rel="noopener">
+              <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a9.8 9.8 0 0 0-8.4 15L2.5 21.5 7.2 20A9.9 9.9 0 1 0 12 2Zm0 2a7.9 7.9 0 0 1 6.7 12.1A7.9 7.9 0 0 1 7.7 18l-.4-.2-2.1.7.7-2-.3-.4A7.9 7.9 0 0 1 12 4Zm-3.3 4.4c-.2 0-.5.1-.7.4-.2.3-.8.8-.8 2s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.8 2.1.8 2.5.6 3 .6.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2-.1-.1-.2-.2-.5-.3l-1.8-.9c-.3-.1-.5-.1-.7.2l-.7.8c-.2.2-.4.2-.7.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.7-1.5-2-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.8-1.9c-.2-.4-.4-.4-.6-.4h-.5Z"/></svg></span>
+              <small>WhatsApp</small><strong>+62 895-3607-05332</strong>
+            </a>
+            <a class="contact-card" href="https://www.linkedin.com/in/michael-hutajulu-717953387/" target="_blank" rel="noopener">
+              <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.9 8.8H3.3V21h3.6V8.8ZM5.1 3A2.1 2.1 0 1 0 5 7.2 2.1 2.1 0 0 0 5.1 3ZM21 21h-3.6v-6.3c0-1.6-.6-2.7-2-2.7-1.1 0-1.8.7-2.1 1.4-.1.3-.1.7-.1 1V21H9.6s.1-11.1 0-12.2h3.6v1.7c.5-.8 1.4-2 3.4-2 2.5 0 4.4 1.6 4.4 5.1V21Z"/></svg></span>
+              <small>LinkedIn</small><strong>Michael Hutajulu</strong>
+            </a>
+            <a class="contact-card" href="https://github.com/michaelhutajulu" target="_blank" rel="noopener">
+              <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.9.6-3.5-1.2-3.5-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 0 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.7-1.4-2.3-.3-4.7-1.2-4.7-5A3.9 3.9 0 0 1 6.6 8c-.1-.3-.5-1.3.1-2.7 0 0 .9-.3 2.8 1a9.7 9.7 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .6 1.4.2 2.4.1 2.7a3.9 3.9 0 0 1 1 2.7c0 3.9-2.4 4.8-4.7 5 .4.3.8 1 .8 2v3.3c0 .3.2.6.8.5A10 10 0 0 0 12 2Z"/></svg></span>
+              <small>GitHub</small><strong>@michaelhutajulu</strong>
+            </a>
+            <a class="contact-card" href="https://www.instagram.com/kael.htjl/" target="_blank" rel="noopener">
+              <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm4.8-3.4a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg></span>
+              <small>Instagram</small><strong>@kael.htjl</strong>
             </a>
           </div>
         </div>
-
-        <div class="cert-info">
-          <div class="cert-top-row">
-            <div class="cert-logo">
-              <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
-                <rect width="32" height="32" rx="7" fill="#1a1f38"/>
-                <path d="M8 16c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8"
-                      stroke="#6e56ff" stroke-width="2.5" stroke-linecap="round"/>
-                <circle cx="16" cy="16" r="3" fill="#d4ff00"/>
-              </svg>
-              <span>Dicoding Indonesia</span>
-            </div>
-            <span class="cert-verified">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
-              Verified
-            </span>
-          </div>
-
-          <div class="cert-category">
-            <span class="cert-cat-icon">🤖</span>
-            <span class="cert-cat-text">Artificial Intelligence</span>
-          </div>
-
-          <h3 class="cert-title">Belajar Dasar AI</h3>
-
-          <div class="cert-meta-row">
-            <div class="cert-meta-item">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="4" width="18" height="18" rx="2"/>
-                <line x1="16" y1="2" x2="16" y2="6"/>
-                <line x1="8" y1="2" x2="8" y2="6"/>
-                <line x1="3" y1="10" x2="21" y2="10"/>
-              </svg>
-              27 Februari 2026
-            </div>
-            <div class="cert-meta-item">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-              Berlaku s/d Feb 2029
-            </div>
-          </div>
-
-          <div class="cert-id-row">
-            <span class="cert-id-label">ID Sertifikat</span>
-            <code class="cert-id-code">QLZ99K9L7Z5D</code>
-          </div>
-
-          <a
-            href="https://www.dicoding.com/certificates/QLZ99K9L7Z5D"
-            target="_blank" rel="noopener"
-            class="cert-link-btn"
-          >
-            Lihat Sertifikat
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-          </a>
-        </div>
       </div>
+    </section>
+  </main>
 
-      <!-- ── SERTIFIKAT 2: Memulai Pemrograman dengan Python ── -->
-      <div class="cert-card reveal reveal-d1">
-        <div class="cert-preview">
-          <img
-            src="images/python.png"
-            alt="Sertifikat Memulai Pemrograman dengan Python - Michael Gokma Tua Hutajulu"
-            class="cert-img"
-            loading="lazy"
-          />
-          <div class="cert-preview-overlay">
-            <a
-              href="https://www.dicoding.com/certificates/N9ZON7076XG5"
-              target="_blank" rel="noopener"
-              class="cert-view-btn"
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
-                <polyline points="15 3 21 3 21 9"/>
-                <line x1="10" y1="14" x2="21" y2="3"/>
-              </svg>
-              Buka Sertifikat
-            </a>
-          </div>
-        </div>
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© <span id="year"></span> Michael Gokma Tua Hutajulu. Built with HTML, CSS, and JavaScript.</p>
+      <a href="#hero">Kembali ke atas</a>
+    </div>
+  </footer>
 
-        <div class="cert-info">
-          <div class="cert-top-row">
-            <div class="cert-logo">
-              <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
-                <rect width="32" height="32" rx="7" fill="#1a1f38"/>
-                <path d="M8 16c0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8"
-                      stroke="#6e56ff" stroke-width="2.5" stroke-linecap="round"/>
-                <circle cx="16" cy="16" r="3" fill="#d4ff00"/>
-              </svg>
-              <span>Dicoding Indonesia</span>
-            </div>
-            <span class="cert-verified">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
-              Verified
-            </span>
-          </div>
-
-          <div class="cert-category">
-            <span class="cert-cat-icon">🐍</span>
-            <span class="cert-cat-text">Programming &amp; Coding</span>
-          </div>
-
-          <h3 class="cert-title">Memulai Pemrograman dengan Python</h3>
-
-          <div class="cert-meta-row">
-            <div class="cert-meta-item">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="3" y="4" width="18" height="18" rx="2"/>
-                <line x1="16" y1="2" x2="16" y2="6"/>
-                <line x1="8" y1="2" x2="8" y2="6"/>
-                <line x1="3" y1="10" x2="21" y2="10"/>
-              </svg>
-              27 Februari 2026
-            </div>
-            <div class="cert-meta-item">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-              Berlaku s/d Feb 2029
-            </div>
-          </div>
-
-          <div class="cert-id-row">
-            <span class="cert-id-label">ID Sertifikat</span>
-            <code class="cert-id-code">N9ZON7076XG5</code>
-          </div>
-
-          <a
-            href="https://www.dicoding.com/certificates/N9ZON7076XG5"
-            target="_blank" rel="noopener"
-            class="cert-link-btn"
-          >
-            Lihat Sertifikat
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
-              <polyline points="15 3 21 3 21 9"/>
-              <line x1="10" y1="14" x2="21" y2="3"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
+  <div class="preview-modal" id="previewModal" aria-hidden="true" role="dialog" aria-label="Preview gambar project">
+    <button class="preview-close" id="previewClose" type="button" aria-label="Tutup preview">×</button>
+    <div class="preview-box">
+      <p id="previewTitle">Preview</p>
+      <img id="previewImage" src="" alt="Preview gambar" />
     </div>
   </div>
-</section>
 
-
-<!-- ═══════════════════════════════════════
-     SECTION 7 — KONTAK
-════════════════════════════════════════ -->
-<section id="kontak" class="section">
-  <div class="orb orb-violet" style="width:450px;height:450px;top:0;left:50%;transform:translateX(-50%);opacity:0.4"></div>
-  <div class="container">
-    <div class="section-label reveal">07 — Kontak</div>
-    <div class="contact-grid">
-
-      <!-- Kiri -->
-      <div class="contact-intro">
-        <h2 class="section-title reveal reveal-d1">
-          Mari Bangun Sesuatu<br>yang <em>Luar Biasa</em>
-        </h2>
-        <p class="reveal reveal-d2">
-          Punya proyek yang ingin diwujudkan, pertanyaan yang ingin ditanyakan, 
-          atau sekadar ingin terhubung? Inbox saya selalu terbuka untuk kamu.
-        </p>
-        <div class="email-wrap reveal reveal-d3">
-          <span class="email-lbl">📧 Klik untuk menyalin email</span>
-          <button class="email-btn" id="emailBtn" onclick="copyEmail()">
-            <span id="emailText">mchlhutajulu@gmail.com</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="9" y="9" width="13" height="13" rx="2"/>
-              <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
-            </svg>
-          </button>
-          <div class="copy-toast" id="copyToast">✅ Email berhasil disalin!</div>
-        </div>
-      </div>
-
-      <!-- Kanan: Sosmed -->
-      <div class="socials reveal reveal-d2">
-
-        <a href="https://wa.me/62895360705332" target="_blank" rel="noopener" class="soc-card wa">
-          <div class="soc-ico">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-          </div>
-          <div class="soc-info"><strong>WhatsApp</strong><span>Chat langsung dengan saya</span></div>
-          <div class="soc-arrow">→</div>
-        </a>
-
-        <a href="https://www.instagram.com/kael.htjl?igsh=MTYxcHZidnBwcHB3dA==" target="_blank" rel="noopener" class="soc-card ig">
-          <div class="soc-ico">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-          </div>
-          <div class="soc-info"><strong>Instagram</strong><span>@kael.htjl</span></div>
-          <div class="soc-arrow">→</div>
-        </a>
-
-        <a href="https://www.linkedin.com/in/michael-hutajulu-717953387/" target="_blank" rel="noopener" class="soc-card li">
-          <div class="soc-ico">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </div>
-          <div class="soc-info"><strong>LinkedIn</strong><span>Koneksi profesional</span></div>
-          <div class="soc-arrow">→</div>
-        </a>
-
-        <a href="https://github.com/michaelhutajulu" target="_blank" rel="noopener" class="soc-card gh">
-          <div class="soc-ico">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-          </div>
-          <div class="soc-info"><strong>GitHub</strong><span>@michaelhutajulu</span></div>
-          <div class="soc-arrow">→</div>
-        </a>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ─────────────────────────────────────
-     FOOTER
-───────────────────────────────────────── -->
-<footer>
-  <div class="container">
-    <div class="footer-inner">
-      <div class="footer-logo">
-        <span class="nb">&lt;</span>Michael Hutajulu<span class="na">/&gt;</span>
-      </div>
-      <p class="footer-text">Dirancang &amp; Dibangun oleh <strong>Michael Hutajulu</strong> · 2025</p>
-      <div class="footer-links">
-        <a href="#hero">Beranda</a>
-        <a href="#tentang">Tentang</a>
-        <a href="#proyek">Proyek</a>
-        <a href="#kontak">Kontak</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- ─────────────────────────────────────
-     SCRIPTS
-───────────────────────────────────────── -->
-<script src="js/main.js"></script>
-
+  <script src="js/main.js"></script>
 </body>
 </html>
